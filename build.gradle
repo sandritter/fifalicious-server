@@ -1,0 +1,44 @@
+group 'de.sandritter'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'groovy'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'fifalicious-server'
+    version '1.0-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE')
+    compile('org.springframework.boot:spring-boot-starter-freemarker')
+    compile "org.springframework.boot:spring-boot-starter-hateoas:1.4.3.RELEASE"
+    compile "org.springframework.data:spring-data-rest-hal-browser:2.5.6.RELEASE"
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.5'
+    compile (group: 'org.postgresql', name: 'postgresql', version: '9.4-1200-jdbc41') {
+        exclude group: "org.slf4j", module: "slf4j-simple"
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.4.3.RELEASE'
+    compile('org.codehaus.groovy:groovy-all:2.4.7')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("junit:junit")
+}

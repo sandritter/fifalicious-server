@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/fifa
+    username: fifa
+    password: surfingSince1989
+    platform: POSTGRESQL
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
