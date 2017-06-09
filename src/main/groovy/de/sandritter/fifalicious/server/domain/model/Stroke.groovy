@@ -20,5 +20,5 @@ class Stroke {
     boolean isActive
 
     @Column(name = 'player_reference')
-    long playerId
+    long playerReference
 }
