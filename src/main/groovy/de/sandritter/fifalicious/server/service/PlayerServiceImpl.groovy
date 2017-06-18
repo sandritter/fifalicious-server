@@ -20,4 +20,9 @@ class PlayerServiceImpl implements PlayerService {
     List<Player> findAll() {
         repository.findAll().toList()
     }
+
+    @Override
+    Player findOne(long playerReference) {
+        repository.findOne(playerReference)
+    }
 }

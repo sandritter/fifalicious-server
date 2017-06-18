@@ -1,9 +1,8 @@
 package de.sandritter.fifalicious.server.domain.model
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import com.fasterxml.jackson.annotation.JsonIgnore
+
+import javax.persistence.*
 
 @Entity
 @Table(name = 'stroke')
@@ -11,6 +10,7 @@ class Stroke {
 
     @Id
     @Column(name = 'stroke_id')
+    @GeneratedValue
     Long strokeId
 
     @Column(name = 'create_date')
@@ -20,5 +20,7 @@ class Stroke {
     boolean isActive
 
     @Column(name = 'player_reference')
-    long playerReference
+    @JsonIgnore
+    @ManyToOne
+    private Player player;
 }

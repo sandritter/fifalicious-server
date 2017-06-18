@@ -4,4 +4,5 @@ import de.sandritter.fifalicious.server.domain.model.Player
 
 interface PlayerService {
     List<Player> findAll()
+    Player findOne(long playerReference)
 }

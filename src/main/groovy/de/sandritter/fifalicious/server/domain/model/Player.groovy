@@ -10,7 +10,6 @@ class Player {
     @Column(name = 'player_id')
     long playerId
 
-    @Transient
     long reference
 
     @Column(name = 'first_name')
@@ -22,7 +21,6 @@ class Player {
     @Column(name = 'last_update')
     String lastUpdate
 
-    @OneToMany(targetEntity = Stroke, fetch = FetchType.EAGER)
-    @JoinColumn(name="player_reference")
+    @OneToMany(mappedBy = "player")
     List<Stroke> strokes
 }

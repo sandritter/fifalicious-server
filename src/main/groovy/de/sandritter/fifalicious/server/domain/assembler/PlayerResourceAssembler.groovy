@@ -14,8 +14,7 @@ class PlayerResourceAssembler extends ResourceAssemblerSupport<Player, PlayerRes
     @Override
     PlayerResource toResource(Player player) {
         player.reference = player.playerId
-        PlayerResource resource = createResourceWithId(player.playerId, player)
-        resource
+        createResourceWithId(player.playerId, player)
     }
 
     @Override
